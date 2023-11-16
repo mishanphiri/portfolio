@@ -24,6 +24,7 @@ and R. Work as a liaison between the Lecturer and other tutors.
 - Training new Orientation leaders through facilitating sessions on different topics 
 such as conflict management, culture shock, team building, communication skills, 
 etc
+
 ## Projects
 ### Data-Driven EEG Band Discovery with Decision Trees
 [Publication](https://www.mdpi.com/1424-8220/22/8/3048)
