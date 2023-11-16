@@ -1,0 +1,6 @@
+title: Mishan Phiri
+#logo: assets/img/headshot_circle.png
+#Description: below text image
+show_downloads: true
+theme: minimal-mistakes-jekyll
+plugins: jekyll-include-cache
