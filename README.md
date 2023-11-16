@@ -1,10 +1,10 @@
 # Data Analyst
 
-#### Technical Skills: R, SQL, Python, Tableau
+#### Technical Skills: R, Tableau, SQL, Python
 
 ## Education
-- BBusSci, Analytics | The University of Cape Town (_April 2024_)								       		
-- NSSC	| Windhoek High School (_December 2016_)	 			        		
+- BBusSci, Analytics |  The University of Cape Town (_April 2024_)								       		
+- NSSC |                Windhoek High School (_December 2016_)	 			        		
 
 ## Work Experience
 
