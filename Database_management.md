@@ -30,8 +30,7 @@ Attribute Types:
 | `Pizzas`         | **Pizza ID**, _Resaurant ID_, name, crust type, price                |                                                     
 | `Order`| **Order ID** _Customer ID_, date_time, ETA, number of people, _entertainment category_, duration|
 |`Entertainment` | **ID**, type|
-[Bold represents keys, and Italics represent foreign keys]
-<\table>
+<table>[Bold represents keys, and Italics represent foreign keys]
 
 ### Notes
 1. Three weak entities exist whithin this datadase namely:
