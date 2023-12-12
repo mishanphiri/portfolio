@@ -23,6 +23,7 @@ Creating a database management system for a startup idea for an app: Pizza Deliv
 Customers can order pizzas from restaurants to be delivered to a speciﬁc address, and customers can choose a special “entertainment order” option. When an order is an entertainment order, the delivery person stays with the customer after delivering the pizza and entertains the customers.
 
 ### Querries of a movie industry database | **SQL**
+[Readme file](querries.md)
 The provided database contained information on the movie industry, with all actors and the necessary information that needs to be captured in a movie context. Querries used to extract information from the database
 
 ### A storyboard for a Furniture shop | **Tableau** 
