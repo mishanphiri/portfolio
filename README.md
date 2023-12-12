@@ -26,6 +26,8 @@ Customers can order pizzas from restaurants to be delivered to a speciﬁc addre
 The provided database contained information on the movie industry, with all actors and the necessary information that needs to be captured in a movie context. Querries used to extract information from the database
 
 ### A storyboard for a Furniture shop | **Tableau** 
+[PDF](https://drive.google.com/file/d/17agNsHB1Im99-4rq66Agp_mc7RbVm6M2/view?usp=sharing)
+Using the dataset provided, created an interactive data visualisation and storyboard using Tableau. 
 
 ## Work Experience
 
