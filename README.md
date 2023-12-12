@@ -15,9 +15,12 @@ The onset of big data has introduced new challenges in the geostatistics communi
 ![Bike Study](/assets/img/bike_study.jpeg)      
 
 ### Training a basic Neural Network from first principles
-[Readme File]([https://github.com/mishanphiri/portfolio/blob/main/Doc.md])
+[Readme File](https://github.com/mishanphiri/portfolio/blob/main/Doc.md)
 
 Utilising **R** to classify hawks into three species by constructing a basic (8)-network from first principles that uses body weight and wing length as classifiers. The goal is to use measurements alone to automate the process of classifying hawks into species. This is a demonstration of my understanding of neural networks.
+### Database management system for a Pizza Delivery App
+Creating a database management system for a startup idea for an app: Pizza Delivery with Entertainment. The basic functionality of the app as follows:
+Customers can order pizzas from restaurants to be delivered to a speciﬁc address, and customers can choose a special “entertainment order” option. When an order is an entertainment order, the delivery person stays with the customer after delivering the pizza and entertains the customers.
     		
 
 ## Work Experience
