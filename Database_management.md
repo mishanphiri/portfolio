@@ -39,6 +39,9 @@ Attribute Types:
 * `Pizza` is dependent on the existence of a restaurant.
 2. `Users` is a superclass that has three specialisations, `customer`, `business owner` and `entertainer`, and it is a total disjoint specialization.
 
+### EER Diagram
+Below we have the EER diagram to visually represent all relationships whithin the database.
+![EER Diagram](images/ERR.png)
 
 
 
