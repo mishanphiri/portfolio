@@ -38,7 +38,7 @@ qplot(x = Wing, y =Weight,
 ```
 
 ![Hawk species wing length and body
-weight](Doc_files/figure-gfm/eda-1.png) There is a clear distinction
+weight](images/eda-1.png) There is a clear distinction
 between Species A measurements and the other species. Species B and C
 have a slight overlap and more similar values at their bounds, but over
 all the Species are clearly separable.
@@ -175,7 +175,7 @@ is a hyper parameter, we aim to asses how it affects out of sample error
 at different levels.
 
 <figure>
-<img src="Doc_files/figure-gfm/select%20nu-1.png"
+<img src="images/select%20nu-1.png"
 alt="The validation error plotted against different levels of regularization" />
 <figcaption aria-hidden="true">The validation error plotted against
 different levels of regularization</figcaption>
@@ -195,7 +195,7 @@ pattern.
 
 ### Regularization and Parameters
 
-![](Doc_files/figure-gfm/parameters-1.png)<!-- -->
+![](images/parameters-1.png)<!-- -->
 
 We used
 ![L_2](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;L_2 "L_2")
@@ -234,7 +234,7 @@ legend(0.18, 1.5 ,legend = c("SpecA", 'SpecC', 'SpecB'),
        box.lty=0)
 ```
 
-![](Doc_files/figure-gfm/response%20heatmap-1.png)<!-- -->
+![](images/response%20heatmap-1.png)<!-- -->
 
 Neural networks have proven to be a sufficient tool to predict the
 species classes. Few hidden layers and nodes were needed as the data is
