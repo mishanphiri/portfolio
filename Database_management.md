@@ -18,7 +18,7 @@ The third option in the app to select is that of “entertainer”. When users s
 *Entity Types:* Users, Business User, Hungry Customer, Entertainer, Restaurant, Pizzas, Order, Entertainment.
 *Reasoning:* Each entity has an occurrence and represents a concept with an unambiguous meaning. 
 Attribute Types:
-<table>[Bold represents **keys**, and Italics represent _foreign keys_]
+<table>
 
 | Entity Type | Attribute Type                                                         |
 |------------------|-------------------------------------------------------------------|
@@ -27,12 +27,12 @@ Attribute Types:
 | `Customer`       | Delivery address |
 |`Entertainer` | _Entertainment ID_ , stage name, bio|
 | `Restaurants`    | **Restaurant ID**, name, zip code, address, phone number, website hours, _usiness owner ID__ |
-| `Pizzas`         | **Pizza ID**, _Resaurant ID_, name, crust type, price                |
-                                                     
+| `Pizzas`         | **Pizza ID**, _Resaurant ID_, name, crust type, price                |                                                     
 | `Order`| **Order ID** _Customer ID_, date_time, ETA, number of people, _entertainment category_, duration|
 |`Entertainment` | **ID**, type|
-
+[Bold represents keys, and Italics represent foreign keys]
 <\table>
+
 ### Notes
 1. Three weak entities exist whithin this datadase namely:
 * `Order` cannot exist without a customer creating one.
