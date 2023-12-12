@@ -7,10 +7,10 @@
 - NSSC |                Windhoek High School (_December 2016_)
 
 ## Projects
-### Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
-[Publication](https://www.mdpi.com/1424-8220/22/11/4240)
+### Gaussian Process Approximation for Big Data Analysis
+[Summary](https://www.mdpi.com/1424-8220/22/11/4240) [Full Document](https://www.mdpi.com/1424-8220/22/11/4240)
 
-The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, kriging can potentially become computationally inefficient.
+The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, gaussian process regression can potentially become computationally inefficient. For my honours project, I explored different ways to approximate a gaussian process in order to speed up its computation. The code is available at request, and was completed using **R**, ****
  
 ![Bike Study](/assets/img/bike_study.jpeg)      
 
