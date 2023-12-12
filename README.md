@@ -8,9 +8,9 @@
 
 ## Projects
 ### Gaussian Process Approximation for Big Data Analysis
-[Summary](https://www.mdpi.com/1424-8220/22/11/4240) [Full Document](https://www.mdpi.com/1424-8220/22/11/4240)
+[Summary](https://www.mdpi.com/1424-8220/22/11/4240) [Full Document]([https://www.mdpi.com/1424-8220/22/11/4240](https://drive.google.com/file/d/19RFRp5JYcwoebJ0KiAXG5ITHQa5CC3Zz/view?usp=sharing))
 
-The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, gaussian process regression can potentially become computationally inefficient. For my honours project, I explored different ways to approximate a gaussian process in order to speed up its computation. The code is available at request, and was completed using **R**, ****
+The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, gaussian process regression can potentially become computationally inefficient. For my honours project, I explored different ways to approximate a gaussian process in order to speed up its computation. The code is available at request, and was completed using **R**, **C**
  
 ![Bike Study](/assets/img/bike_study.jpeg)      
 
