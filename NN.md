@@ -1,0 +1,275 @@
+---
+title: "Artifcial Neural Networks "
+author: "Mishan Phiri"
+date: '2023-12-07'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r prelim, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(neuralnet)
+Data <- read.csv("~/All Things Mish/Resumes/Portfolio/NN/Hawks_Data_2023.txt", sep="")
+
+```
+
+
+## Exploratory Data Analysis  
+Ecologists often capture and release animals and record various physical measurements as well as species classification. Determining species require some expertise, and ecologists wish to automate the classification process using only the measurements taken.  
+Firstly let us take a look at the data available to us.
+
+
+<table>
+Variable | Description
+-|-
+`SpecA` | One hot encoded indicating Species A
+`SpecB` | One hot encoded indicating Species B
+`SpecC` | One hot encoded indicating Species C
+`Wing` | Length in metres of primary wing feather from tip to wrist it attaches to.
+`Weight` | Body weight in kilograms.
+<table> 
+The data is already cleaned and standardised, therefore we skip this step and instead visualise the data to seek out any patterns.  
+
+```{r eda, fig.cap= "Hawk species wing length and body weight", echo=TRUE}
+#Combine Hot encoded data for easy EDA
+Spec = c(rep('SpecA', 49), rep('SpecB', 50), rep('SpecC', 49)) 
+eda.data = cbind(Spec, Data[,c(4,5)])
+eda.data$Spec = as.factor(Spec)
+#Plot wings vs Weight
+qplot(x = Wing, y =Weight,
+      data = eda.data, color = Spec,
+      main = 'Species Weight and Wing Span')
+
+```
+There is a clear distinction between Species A measurements  and the other species. Species B and C have a slight overlap and more similar values at their bounds, but over all the Species are clearly separable.
+
+## Building a Neural Network.
+
+### Activation Functions.
+
+For simplicity's sake we will consider a 'vanilla' neural network with a single hidden layer. We will use a softmax activation function in on the output layer:  
+$$
+A^L = exp(\textbf{Z})\cdot(exp(\textbf{Z})^\prime\textbf{1})
+$$
+The softmax activation function was chosen as it behaves as a distribution and the output can be treated as probabilities,which is more suitable for classification type problems. The rectified linear units (ReLU) defined as $max(0,z) \in \mathbb{R}^+$ is the activation function used on the single hidden layer. We use the matrix notation of the activation functions as it computes faster than evaluating each observation individually.  
+Firstly we build a function called `soft_max` that evaluates the matrix of inputs and returns a transpose of the class probabilities and a wrapper function for the ReLU activation function called `sig1`.
+
+```{r activation functions, cars}
+soft_max = function(z){
+  #z is input in layer L
+  n = ncol(z)
+  one = matrix(1,q,1) #A matrix of ones to sum the denominator
+  den = 1/(c(t(exp(z))%*%one)) #suming the rows and inverting the variables
+  d = diag(den)
+  out= exp(z)%*%d 
+  #return class probabilities
+  return(out)
+}
+
+sig1  = function(x){
+  #ReLU Function applied on Matrix X
+  pmax(x,0)
+}
+```
+
+### Neural Network
+Secondly we build a function called `neural_net` that takes in arguments:
+
+<table>
+Argument | Description 
+-|-
+X | the design matrix
+Y | the response matrix
+theta ($\theta$) | a vector of starting parameter values
+m | the number of nodes on the missing layer
+nu ($\nu$) | the regularization parameter $\nu \geq 0$
+pred | a boolean operator specifying whether we are making a prediction.
+<table>
+
+```{r echo=TRUE}
+neural_net = function(X,Y,theta,m, nu, pred = FALSE){
+  #Dimension Variables
+  N = dim(X)[1]
+  p = dim(X)[2]
+  q = dim(Y)[2]
+  
+  #Populate Relevant matrices, b are bias vectors and W are weight matrices
+  index = 1:(p*m)
+  W1    = matrix(theta[index],p,m)
+  index = max(index) + 1:(m*q)
+  W2    = matrix(theta[index],m,q)
+  index = max(index) + 1:m
+  b1    = matrix(theta[index],m,1)
+  index = max(index) + 1:q
+  b2    = matrix(theta[index],q,1)
+  # A vector of ones for creating bias matrices
+  ones = matrix(1,1,N)
+  
+  # Evaluate the updating equation in matrix form
+ 
+  A0 = t(X) #Input layer
+  A1 = sig1(t(W1)%*%A0+b1%*%ones) #Hidden layer
+  A2 = soft_max(t(W2)%*%A1+b2%*%ones) #Output layer
+  pi_hat = t(A2) #estimated probabilities
+  if(!pred){ #Run if not predicting: Calculating Error
+   error = rep(0,N)
+     whA = which(Y[,1]==1)
+     whB = which(Y[,2]==1)
+     whC = which(Y[,3]==1)
+     error[whA] = -log(pi_hat[whA,1])
+     error[whB] = -log(pi_hat[whB,2])
+     error[whC] = -log(pi_hat[whC,3])
+    
+     E1 = sum(error)/N #Cost Function
+     E2 = E1 + nu*(sum(W1^2)+sum(W2^2))/(2*N) # Penealised cost function
+     # Return a list of relevant objects: estimated probabilities, The error and penalised error
+    return(list(out = pi_hat, E1 = E1, E2 = E2))
+  }else #When predicting only return estimated errors
+    {return(pi_hat)}
+}
+```
+
+Since we start with random parameters of the network, therefore we need to find the 'best' approximation of the relationship between the predictors and the response. In the context of a classification problem, the 'best' parameters are taken to be the set that maximises the probability of $\hat{y}=y$. Under such construction we can minimise the cross-entropy error:
+$$
+- \frac{1}{N}\sum_{i=1}^N \left(y_{iA}log(\hat{y}_{iA}) + y_{iB} log(\hat{y}_{iB}) + y_{iC}log(\hat{y}_{iC}) \right) 
+$$
+
+### Validation and Regularisation.  
+A crucial component of training a neural network is the test set. We use it to determine whether the model has captured the data's underlying pattern, and ensure generalisation. One way to prevent overfiting the model to the training set is to penalise the model for being overly complex through regularisation. This essentially constrains the optimization problem and the objective function can be rewritten as:
+$$
+- \frac{1}{N}\sum_{i=1}^N \left(y_{iA}log(\hat{y}_{iA}) + y_{iB} log(\hat{y}_{iB}) + y_{iC}log(\hat{y}_{iC}) \right) + \frac{\nu}{2N}\sum{W^2}
+$$
+It is the cross entropy error plus a second term; the sum of the squared weights scaled by a factor of $\frac{\nu}{2N}$. Half the data is sampled using a seed of 2023, and used as our training set. Since $\nu$ is a hyper parameter, we aim to asses how it affects out of sample error at different levels.
+```{r , include=FALSE}
+#### Validation #####
+set.seed(2023)
+dex = sample(1:nrow(Data),0.5*nrow(Data))
+X.test = as.matrix(Data[dex,c(4,5)])
+X.train = as.matrix(Data[-dex,c(4,5)])
+Y.test = as.matrix(Data[dex,-c(4,5)])
+Y.train = as.matrix(Data[-dex,-c(4,5)])
+
+#setting up number of parameters
+p = dim(X.train)[2]
+q = dim(Y.train)[2]
+m = 8
+npars = p*m+m*q+m+q
+```
+
+
+```{r objective function, include=FALSE}
+obj = function(pars){ #Objective Function for training
+  res = neural_net(X.train ,Y.train ,pars ,m ,nu)
+  return(res$E2)
+}
+
+#### Choosing nu ######
+M = 20
+Etest = rep(0,M)
+
+nus= seq(0,0.5,length = M)
+
+set.seed(123)
+for(i in 1:M){ #Choosing an appropriate nu 
+  nu = nus[i]
+  theta = runif(npars,-1,1)
+  res_opt = nlm(obj,theta, iterlim = 250)
+  
+  res_test = neural_net(X.test,Y.test,res_opt$estimate,m,0)
+  Etest[i] = res_test$E1
+}
+
+```
+
+
+```{r select nu, echo=FALSE, fig.cap="The validation error plotted against different levels of regularization"}
+#Plot Validation Error
+plot(nus, Etest, type ='b',
+     lwd = 2, ylab = "Validation Error",
+     xlab = expression(nu),
+     main = expression(paste("Validation error vs ", nu)))
+
+#Select nu that minimises out of sample error.
+nu.min =nus[which.min(Etest)]
+
+```
+
+Therefore we optimise the objective function using newtons method over different values of $\nu$. The figure above shows the plot of the test error and the range of $\nu$. The out of sample error is minimised at $\nu = 0.026$, past this value, the network is overly complex and begins returning gibberish. A regularization parameter close to 0, such as this case indicates a model that is complex enough to capture the underlying pattern. 
+
+```{r Fit, include=FALSE}
+#Fit on all the data
+X = as.matrix(Data[,c(4,5)])
+Y = as.matrix(Data[,-c(4,5)])
+
+obj2 = function(pars){ #Objective function on full dataset
+  res = neural_net(X ,Y,pars ,m ,nu.min)
+  return(res$E2)
+}
+#Optimise parameters
+theta_min= nlm(obj2,theta,iterlim = 500)$estimate
+```
+
+
+### Regularization and Parameters
+```{r parameters, echo=FALSE}
+#Plot Parameter magnitutes
+plot(theta_min, type = 'h', main = 'Parameter Magnitude',
+     ylab = expression(paste(theta)),
+     sub = expression(paste(nu, '= 0.0.026')))
+```
+
+We used $L_2$ regularization, the effect on the individual weights is to shrink the weights in magnitude, in opposed to setting less important weights to zero. The Figure above shows how the weights and biases have been affected by the addition of the $\nu$.
+
+### Prediction Map and closing remarks
+```{r responses, include=FALSE}
+#Predicted response
+res= neural_net(X,Y,theta_min, m, nu.min)
+
+Y_hat = round(res$out,0)
+
+#Setting up Lattice
+## seqence of possible values
+x_wing = seq(min(X[,1]), max(X[,1]), length =275)
+x_weight = seq(min(X[,2]), max(X[,2]), length =275)
+
+## Coordinate system of possible values
+x.coords = rep(x_wing, 150)
+y.coords = rep(x_weight, each = 150)
+
+#Create a lattice and predict the species for possible wing, weight combinations
+Lat = as.matrix(data.frame(Wing = x.coords , Weight = y.coords))
+pred= neural_net(Lat,Y,theta_min, m, nu.min, pred = TRUE)
+y1 = apply(pred, 1, which.max)
+
+
+```
+In order to create a prediction map, we create all possible combinations of body weight and wing length and predict the possible species. The result is the figure below with a 98% prediction accuracy.
+
+```{r response heatmap}
+#Plotting Response curves
+
+cols = c('palegreen', 'lightblue', 'orchid2')
+cols2 = c('red', 'green', 'blue')
+
+plot(y.coords~ x.coords, pch = 16, col = cols[y1],
+     main = 'Response Map', 
+     xlab = "Wing", ylab = "Weight")
+points(X[,2]~ X[,1],pch = 20, cex = 1, col = cols2[eda.data$Spec])
+
+legend(0.15, 1.5 ,legend = c("SpecA", 'SpecC', 'SpecB'),
+       col = c('palegreen', 'lightblue', 'orchid2'),
+       title = "Predicted",
+       pch=15, cex=0.5,
+       box.lty=0)
+legend(0.18, 1.5 ,legend = c("SpecA", 'SpecC', 'SpecB'),
+       col = c('red', 'green', 'blue'),
+       title = "Actual",
+       pch=16, cex=0.5,
+       box.lty=0)
+
+```
+
+Neural networks have proven to be a sufficient tool to predict the species classes. Few hidden layers and nodes were needed as the data is separable. A more complex dataset would need more parameters. Often Neural networks make use of a sort of stochastic gradient decent, where we evaluate the cost function with respect to the model parameters. This is refereed to as back propagation, as we work backwards from the cost function and calculate the gradient w.r.t the parameters in each layer consecutively.
