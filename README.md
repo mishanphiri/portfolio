@@ -8,7 +8,7 @@
 
 ## Projects
 ### Training a basic Neural Network from first principles
-[Readme File](https://www.mdpi.com/1424-8220/22/8/3048)
+[Readme File]([https://www.mdpi.com/1424-8220/22/8/3048](https://github.com/mishanphiri/portfolio/blob/main/Doc.md))
 
 Utilising **R** to classify hawks into three species by constructing a basic (8)-network from first principles that uses body weight and wing length as classifiers. The goal is to use measurements alone to automate the process of classifying hawks into species. This is a demonstration of my understanding of neural networks.
 
