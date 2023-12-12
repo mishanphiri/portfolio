@@ -13,10 +13,25 @@ The second option in the app is to select “hungry customer”. Hungry customer
 Hungry customers can request a special type of order: the entertainment order. Not every order has to be an entertainment order. But when a hungry customer indicates that he or she wants to be entertained while eating the pizza, we not only want to register all the regular order information, but also the type of entertainment the user requests, and for how long (a duration).
 The third option in the app to select is that of “entertainer”. When users select entertainer, they must provide a stage name, write a short bio about themselves, and indicate their price per 30 minutes. Every entertainment order is fulﬁlled by exactly one entertainer. Every entertainer can choose for which pizza restaurant(s) he or she wants to work. For each pizza restaurant, an entertainer wants to work with, he or she should indicate his or her availability by day (Monday, Tuesday, Wednesday, etc.)
 
-# EER conceptual data model for the data requirements
+# Database Management model 
+## EER conceptual data model for the data requirements
 *Entity Types:* Users, Business User, Hungry Customer, Entertainer, Restaurant, Pizzas, Order, Entertainment.
 *Reasoning:* Each entity has an occurrence and represents a concept with an unambiguous meaning. 
 Attribute Types:
+<table>
+
+| Entity Type | Attribute Type                                                         |
+|------------------|-------------------------------------------------------------------|
+| `Users`          | **User ID**, name, address, DOB                                   |
+| `Business Owners`| LinkedIn                                                          |
+| `Restaurants`    | **Restaurant ID**, name, zip code, address, phone number, website hours, _usiness owner ID__ |
+| `Pizzas`      | **Pizza ID**, _Resaurant ID_, name, crust type, price                |
+| `Customer`    | Delivery address                                                     |
+| `Order`| **Order ID** _Customer ID_, date_time, ETA, number of people, _entertainment category_, duration|
+|Entertainment | **ID**, type|
+|Entertainer |**Entertainer ID**, stage name, bio|
+
+<table>
 
 
 
