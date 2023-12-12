@@ -18,20 +18,27 @@ The third option in the app to select is that of “entertainer”. When users s
 *Entity Types:* Users, Business User, Hungry Customer, Entertainer, Restaurant, Pizzas, Order, Entertainment.
 *Reasoning:* Each entity has an occurrence and represents a concept with an unambiguous meaning. 
 Attribute Types:
-<table>
+<table>[Bold represents **keys**, and Italics represent _foreign keys_]
 
 | Entity Type | Attribute Type                                                         |
 |------------------|-------------------------------------------------------------------|
 | `Users`          | **User ID**, name, address, DOB                                   |
 | `Business Owners`| LinkedIn                                                          |
+| `Customer`       | Delivery address |
+|`Entertainer` | _Entertainment ID_ , stage name, bio|
 | `Restaurants`    | **Restaurant ID**, name, zip code, address, phone number, website hours, _usiness owner ID__ |
-| `Pizzas`      | **Pizza ID**, _Resaurant ID_, name, crust type, price                |
-| `Customer`    | Delivery address                                                     |
+| `Pizzas`         | **Pizza ID**, _Resaurant ID_, name, crust type, price                |
+                                                     
 | `Order`| **Order ID** _Customer ID_, date_time, ETA, number of people, _entertainment category_, duration|
-|Entertainment | **ID**, type|
-|Entertainer |**Entertainer ID**, stage name, bio|
+|`Entertainment` | **ID**, type|
 
-<table>
+<\table>
+### Notes
+1. Three weak entities exist whithin this datadase namely:
+* `Order` cannot exist without a customer creating one.
+* `Restaurant` cannot exist without a customer creating one.
+* `Pizza` is dependent on the existence of a restaurant.
+2. `Users` is a superclass that has three specialisations, `customer`, `business owner` and `entertainer`, and it is a total disjoint specialization.
 
 
 
