@@ -7,19 +7,18 @@
 - NSSC |                Windhoek High School (_December 2016_)
 
 ## Projects
-### Training a basic Neural Network from first principles
-[Readme File]([https://www.mdpi.com/1424-8220/22/8/3048](https://github.com/mishanphiri/portfolio/blob/main/Doc.md))
-
-Utilising **R** to classify hawks into three species by constructing a basic (8)-network from first principles that uses body weight and wing length as classifiers. The goal is to use measurements alone to automate the process of classifying hawks into species. This is a demonstration of my understanding of neural networks.
-
-![EEG Band Discovery](/assets/img/eeg_band_discovery.jpeg)
-
 ### Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
 [Publication](https://www.mdpi.com/1424-8220/22/11/4240)
 
-Used **Matlab** to train over 100 machine learning models which estimated particulate matter concentrations based on a suite of over 300 biometric variables. We found biometric variables can be used to accurately estimate particulate matter concentrations at ultra-fine spatial scales with high fidelity (r2 = 0.91) and that smaller particles are better estimated than larger ones. Inferring environmental conditions solely from biometric measurements allows us to disentangle key interactions between the environment and the body.
+The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, kriging can potentially become computationally inefficient.
+ 
+![Bike Study](/assets/img/bike_study.jpeg)      
 
-![Bike Study](/assets/img/bike_study.jpeg)           		
+### Training a basic Neural Network from first principles
+[Readme File]([https://github.com/mishanphiri/portfolio/blob/main/Doc.md])
+
+Utilising **R** to classify hawks into three species by constructing a basic (8)-network from first principles that uses body weight and wing length as classifiers. The goal is to use measurements alone to automate the process of classifying hawks into species. This is a demonstration of my understanding of neural networks.
+    		
 
 ## Work Experience
 
