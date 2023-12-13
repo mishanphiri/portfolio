@@ -1,4 +1,4 @@
-Artifcial Neural Networks
+Artificial Neural Networks
 ================
 Mishan Phiri
 2023-12-07
@@ -7,7 +7,7 @@ Mishan Phiri
 
 Ecologists often capture and release animals and record various physical
 measurements as well as species classification. Determining species
-require some expertise, and ecologists wish to automate the
+requires some expertise, and ecologists wish to automate the
 classification process using only the measurements taken.  
 Firstly let us take a look at the data available to us.
 
@@ -40,23 +40,22 @@ qplot(x = Wing, y =Weight,
 ![Hawk species wing length and body
 weight](images/eda-1.png) There is a clear distinction
 between Species A measurements and the other species. Species B and C
-have a slight overlap and more similar values at their bounds, but over
-all the Species are clearly separable.
+have a slight overlap and more similar values at their bounds, but overall the Species are clearly separable.
 
 ## Building a Neural Network.
 
 ### Activation Functions.
 
-For simplicity’s sake we will consider a ‘vanilla’ neural network with a
-single hidden layer. We will use a softmax activation function in on the
+For simplicity’s sake, we will consider a ‘vanilla’ neural network with a
+single hidden layer. We will use a softmax activation function in the
 output layer:  
 
 ![A^L = exp(\textbf{Z})\cdot(exp(\textbf{Z})^\prime\textbf{1})](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;A%5EL%20%3D%20exp%28%5Ctextbf%7BZ%7D%29%5Ccdot%28exp%28%5Ctextbf%7BZ%7D%29%5E%5Cprime%5Ctextbf%7B1%7D%29 "A^L = exp(\textbf{Z})\cdot(exp(\textbf{Z})^\prime\textbf{1})")
 
 The softmax activation function was chosen as it behaves as a
-distribution and the output can be treated as probabilities,which is
+distribution and the output can be treated as probabilities, which is
 more suitable for classification type problems. The rectified linear
-units (ReLU) defined as
+units (ReLU) are defined as
 ![max(0,z) \in \mathbb{R}^+](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;max%280%2Cz%29%20%5Cin%20%5Cmathbb%7BR%7D%5E%2B "max(0,z) \in \mathbb{R}^+")
 is the activation function used on the single hidden layer. We use the
 matrix notation of the activation functions as it computes faster than
@@ -85,7 +84,7 @@ sig1  = function(x){
 
 ### Neural Network
 
-Secondly we build a function called `neural_net` that takes in
+Secondly, we build a function called `neural_net` that takes in
 arguments:
 
 <table>
@@ -150,7 +149,7 @@ predictors and the response. In the context of a classification problem,
 the ‘best’ parameters are taken to be the set that maximises the
 probability of
 ![\hat{y}=y](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Chat%7By%7D%3Dy "\hat{y}=y").
-Under such construction we can minimise the cross-entropy error:
+Under such construction, we can minimise the cross-entropy error:
 
 ![- \frac{1}{N}\sum\_{i=1}^N \left(y\_{iA}log(\hat{y}\_{iA}) + y\_{iB} log(\hat{y}\_{iB}) + y\_{iC}log(\hat{y}\_{iC}) \right)](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;-%20%5Cfrac%7B1%7D%7BN%7D%5Csum_%7Bi%3D1%7D%5EN%20%5Cleft%28y_%7BiA%7Dlog%28%5Chat%7By%7D_%7BiA%7D%29%20%2B%20y_%7BiB%7D%20log%28%5Chat%7By%7D_%7BiB%7D%29%20%2B%20y_%7BiC%7Dlog%28%5Chat%7By%7D_%7BiC%7D%29%20%5Cright%29 "- \frac{1}{N}\sum_{i=1}^N \left(y_{iA}log(\hat{y}_{iA}) + y_{iB} log(\hat{y}_{iB}) + y_{iC}log(\hat{y}_{iC}) \right)")
 
@@ -158,7 +157,7 @@ Under such construction we can minimise the cross-entropy error:
 
 A crucial component of training a neural network is the test set. We use
 it to determine whether the model has captured the data’s underlying
-pattern, and ensure generalisation. One way to prevent overfiting the
+pattern and ensure generalisation. One way to prevent overfitting the
 model to the training set is to penalise the model for being overly
 complex through regularisation. This essentially constrains the
 optimization problem and the objective function can be rewritten as:
@@ -168,10 +167,10 @@ optimization problem and the objective function can be rewritten as:
 It is the cross entropy error plus a second term; the sum of the squared
 weights scaled by a factor of
 ![\frac{\nu}{2N}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cfrac%7B%5Cnu%7D%7B2N%7D "\frac{\nu}{2N}").
-Half the data is sampled using a seed of 2023, and used as our training
+Half the data is sampled using a seed of 2023 and used as our training
 set. Since
 ![\nu](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cnu "\nu")
-is a hyper parameter, we aim to asses how it affects out of sample error
+is a hyperparameter, we aim to assess how it affects out-of-sample error
 at different levels.
 
 <figure>
@@ -186,7 +185,7 @@ different values of
 ![\nu](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cnu "\nu").
 The figure above shows the plot of the test error and the range of
 ![\nu](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cnu "\nu").
-The out of sample error is minimised at
+The out-of-sample error is minimised at
 ![\nu = 0.026](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cnu%20%3D%200.026 "\nu = 0.026"),
 past this value, the network is overly complex and begins returning
 gibberish. A regularization parameter close to 0, such as this case
@@ -200,14 +199,14 @@ pattern.
 We used
 ![L_2](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;L_2 "L_2")
 regularization, the effect on the individual weights is to shrink the
-weights in magnitude, in opposed to setting less important weights to
+weights in magnitude, as opposed to setting less important weights to
 zero. The Figure above shows how the weights and biases have been
 affected by the addition of the
 ![\nu](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5Cnu "\nu").
 
 ### Prediction Map and closing remarks
 
-In order to create a prediction map, we create all possible combinations
+To create a prediction map, we create all possible combinations
 of body weight and wing length and predict the possible species. The
 result is the figure below with a 98% prediction accuracy.
 
@@ -239,8 +238,8 @@ legend(0.18, 1.5 ,legend = c("SpecA", 'SpecC', 'SpecB'),
 Neural networks have proven to be a sufficient tool to predict the
 species classes. Few hidden layers and nodes were needed as the data is
 separable. A more complex dataset would need more parameters. Often
-Neural networks make use of a sort of stochastic gradient decent, where
+Neural networks make use of a sort of stochastic gradient descent, where
 we evaluate the cost function with respect to the model parameters. This
-is refereed to as back propagation, as we work backwards from the cost
+is referred to as backpropagation, as we work backwards from the cost
 function and calculate the gradient w.r.t the parameters in each layer
 consecutively.
