@@ -1,9 +1,9 @@
-Database Querries
+Database Queries
 ================
 Mishan Phiri
 2023-12-07
 # Brief
-The provided database contained information on the movie industry, with all actors and the necessary information that needs to be captured in a movie context. Querries used to extract information from the database:
+The provided database contained information on the movie industry, with all actors and the necessary information to capture in a movie context. Queries used to extract information from the database:
 ![Database](images/datatbase.png)
 
 1. **For each gender, show how many actors there are, who were born between 1940 and 1970**  
