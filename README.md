@@ -8,7 +8,7 @@
 
 ## Projects
 ### Gaussian Process Approximation for Big Data Analysis | **R**, **C**
-[Summary](https://drive.google.com/file/d/1BjLjjhXRd49oTYrOswL_LhWnvsaotD1f/view?usp=sharing)         [Full Document](https://drive.google.com/file/d/19RFRp5JYcwoebJ0KiAXG5ITHQa5CC3Zz/view?usp=sharing)
+[Summary](https://drive.google.com/file/d/1BjLjjhXRd49oTYrOswL_LhWnvsaotD1f/view?usp=sharing) <nbsp> [Full Document](https://drive.google.com/file/d/19RFRp5JYcwoebJ0KiAXG5ITHQa5CC3Zz/view?usp=sharing)  
 The onset of big data has introduced new challenges in the geostatistics community. Kriging is a prominent prediction tool used in spatial statistics, but is has cubic time complexity and as datasets become larger and larger, gaussian process regression can potentially become computationally inefficient. For my honours project, I explored different ways to approximate a gaussian process in order to speed up its computation. The code is available at request.  
 
 ### Training a basic Neural Network from first principles | **R**
