@@ -16,8 +16,8 @@ The onset of big data has introduced new challenges in the geostatistics communi
 Utilising **R** to classify hawks into three species by constructing a basic (8)-network from first principles that uses body weight and wing length as classifiers. The goal is to use measurements alone to automate classifying hawks into species. This is a demonstration of my understanding of neural networks.
 ### Database management system for a Pizza Delivery App
 [Readme file](https://github.com/mishanphiri/portfolio/blob/main/Database_management.md)  
-Creating a database management system for a startup idea for an app: Pizza Delivery with Entertainment. The basic functionality of the app as follows:
-Customers can order pizzas from restaurants to be delivered to a speciﬁc address, and customers can choose a special “entertainment order” option. When an order is an entertainment order, the delivery person stays with the customer after delivering the pizza and entertains the customers.
+Creating a database management system for a startup idea for an app: Pizza Delivery with Entertainment. The basic functionality of the app is as follows:
+Customers can order pizzas from restaurants to be delivered to a speciﬁc address, and customers can choose a special “entertainment order” option. When an order is an entertainment order, the delivery person stays with the customer after delivering the pizza and entertains the customer.
 
 ### Queries of a movie industry database | **SQL**
 [Readme file](querries.md)  
@@ -30,7 +30,7 @@ Using the dataset provided, created an interactive data visualisation and storyb
 ## Work Experience
 
 **Student Affairs Representative at Commerce Students Council (CSC) UCT (_2021/22_)**
-- Student Advocacy. Holding faculty accountable to the needs of students. Expanded faculty mentorship program to include none first year students. Launched first ever peer support group. Pilot of Financial Literacy classes. Liaison between CSC and UCT 
+- Student Advocacy. Holding faculty accountable to the needs of students. Expanded faculty mentorship program to include none first-year students. Launched first-ever peer support group. Pilot of Financial Literacy classes. Liaison between CSC and UCT 
 bodies regarding students’ well-being.
 
 **Statistics Tutor at SmartPrep Tutors (_March 2023 - Present_)**
