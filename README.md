@@ -1,6 +1,6 @@
 # Data Analyst
 
-#### Technical Skills: R, Tableau, SQL, Python
+#### Technical Skills: R, Power BI, SQL, Python
 
 ## Education
 - BBusSci, Analytics |  The University of Cape Town (_April 2024_)								       		
@@ -29,18 +29,21 @@ Using the dataset provided, created an interactive data visualisation and storyb
 
 ## Work Experience
 
-**Student Affairs Representative at Commerce Students Council (CSC) UCT (_2021/22_)**
-- Student Advocacy. Holding faculty accountable to the needs of students. Expanded faculty mentorship program to include none first-year students. Launched first-ever peer support group. Pilot of Financial Literacy classes. Liaison between CSC and UCT 
-bodies regarding students’ well-being.
+**Junior Data Analyst at The Document Warehouse (_March 2024 - Present_)**
+- 
 
-**Statistics Tutor at SmartPrep Tutors (_March 2023 - Present_)**
+**Orientation Trainer at Department of Student Affairs UCT (_August 2022 - November 2023_)**
+- Training new Orientation leaders through facilitating sessions on different topics 
+such as conflict management, culture shock, team building, communication skills, 
+etc. Reimanged the syllabus to include peer-to-peer learning, and teach and apply methods.
+
+**Statistics Tutor at SmartPrep Tutors (_March 2023 - December 2023_)**
 - Private tutoring, predominantly introductory statistics and multivariate analysis, introduction to Python. 100% success rate
 
 **Multivariate Analysis Head Tutor at Department of Statistics (_February 2022 - June 2023_)**
 -  Lesson planning and presentation. Assist Students with understanding concepts 
 and R. Work as a liaison between the Lecturer and other tutors. 
 
-**Orientation Trainer at Department of Student Affairs UCT (_August 2022-Present_)**
-- Training new Orientation leaders through facilitating sessions on different topics 
-such as conflict management, culture shock, team building, communication skills, 
-etc. Reimanged the syllabus to include peer-to-peer learning, and teach and apply methods.
+**Student Affairs Representative at Commerce Students Council (CSC) UCT (_2021/22_)**
+- Student Advocacy. Holding faculty accountable to the needs of students. Expanded faculty mentorship program to include none first-year students. Launched first-ever peer support group. Pilot of Financial Literacy classes. Liaison between CSC and UCT 
+bodies regarding students’ well-being.
