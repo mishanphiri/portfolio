@@ -30,7 +30,8 @@ Using the dataset provided, created an interactive data visualisation and storyb
 ## Work Experience
 
 **Junior Data Analyst at The Document Warehouse (_March 2024 - Present_)**
-- 
+- Cleaning and preparing data for analysis. Analysing data, and creating reports and dashboards for internal and external stakeholders and automating internal reports.
+- Design and maintain databases and other applications in-house and for clients
 
 **Orientation Trainer at Department of Student Affairs UCT (_August 2022 - November 2023_)**
 - Training new Orientation leaders through facilitating sessions on different topics 
