@@ -1,6 +1,6 @@
 # Data Analyst
 
-#### Technical Skills: R, Power BI, SQL, Python
+#### Technical Skills: SQL, Power BI, SAS, Python
 
 ## Education
 - BBusSci, Analytics |  The University of Cape Town (_April 2024_)								       		
@@ -28,8 +28,12 @@ The provided database contained information on the movie industry, with all acto
 Using the dataset provided, created an interactive data visualisation and storyboard using Tableau. 
 
 ## Work Experience
-
-**Junior Data Analyst at The Document Warehouse (_March 2024 - Present_)**
+**Business Intelligence Analyst at FNB Namibia (_October 2025 - present_)**
+- Data cleaning and conduct in-depth employee analytics, customer behavior analysis, and fraud detection investigations to drive data-informed decisions.
+- Design and implement automation solutions to streamline and eliminate repetitive tasks, improving efficiency.
+- Analyze customer engagement metrics and evaluate campaign performance to optimize marketing strategies and outcomes.
+  
+**Junior Data Analyst at The Document Warehouse (_March 2024 - September 2024_)**
 - Cleaning and preparing data for analysis. Analysing data, and creating reports and dashboards for internal and external stakeholders and automating internal reports.
 - Design and maintain databases and other applications in-house and for clients
 
@@ -42,7 +46,7 @@ etc. Reimanged the syllabus to include peer-to-peer learning, and teach and appl
 - Private tutoring, predominantly introductory statistics and multivariate analysis, introduction to Python. 100% success rate
 
 **Multivariate Analysis Head Tutor at Department of Statistics (_February 2022 - June 2023_)**
--  Lesson planning and presentation. Assist Students with understanding concepts 
+- Lesson planning and presentation. Assist Students with understanding concepts 
 and R. Work as a liaison between the Lecturer and other tutors. 
 
 **Student Affairs Representative at Commerce Students Council (CSC) UCT (_2021/22_)**
