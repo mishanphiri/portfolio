@@ -1,4 +1,4 @@
-# Data Analyst
+# Data Scientist, BI Analyst
 
 #### Technical Skills: SQL, Power BI, SAS, Python
 
