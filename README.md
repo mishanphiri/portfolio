@@ -27,8 +27,11 @@ The provided database contained information on the movie industry, with all acto
 [PDF](https://drive.google.com/file/d/17agNsHB1Im99-4rq66Agp_mc7RbVm6M2/view?usp=sharing)  
 Using the dataset provided, created an interactive data visualisation and storyboard using Tableau. 
 
+### ALX Proffesional Foundations |
+[PDF](https://drive.google.com/file/d/1Ze4v6YM7tpce5JcRs0nvqLzbhvxzMOsY/view?usp=sharing)
+
 ## Work Experience
-**Business Intelligence Analyst at FNB Namibia (_October 2025 - present_)**
+**Business Intelligence Analyst at FNB Namibia (_October 2024 - present_)**
 - Data cleaning and conduct in-depth employee analytics, customer behavior analysis, and fraud detection investigations to drive data-informed decisions.
 - Design and implement automation solutions to streamline and eliminate repetitive tasks, improving efficiency.
 - Analyze customer engagement metrics and evaluate campaign performance to optimize marketing strategies and outcomes.
