@@ -4,4 +4,4 @@ Description: "Data Proffesional, BI Analyst, Data Science and Data Engineering.
 Mishan Phiri is a data professional currently employed as a BI Analyst. Her work focuses on streamlining and automating reporting processes. She aims to become an all-rounded data professional, including expertise in Data Science and Engineering.
 #show_downloads: true
 theme: jekyll-theme-minimal
-#plugins: jekyll-include-cache
+plugins: jekyll-include-cache
