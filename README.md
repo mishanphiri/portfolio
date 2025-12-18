@@ -28,8 +28,7 @@ The provided database contained information on the movie industry, with all acto
 Using the dataset provided, created an interactive data visualisation and storyboard using Tableau. 
 
 ### ALX Proffesional Foundations | Arts Connect Africa Project
-[PDF](https://drive.google.com/file/d/1Ze4v6YM7tpce5JcRs0nvqLzbhvxzMOsY/view?usp=sharing)  
-[Video Demo](https://drive.google.com/file/d/1d3C_4GBPyf9NmMM1UtH99ew_4foJMhzh/view?usp=drive_link)  
+[PDF](https://drive.google.com/file/d/1Ze4v6YM7tpce5JcRs0nvqLzbhvxzMOsY/view?usp=sharing) | [Video Demo](https://drive.google.com/file/d/1d3C_4GBPyf9NmMM1UtH99ew_4foJMhzh/view?usp=drive_link)  
 In South Africa’s township and rural communities, many young artists struggle to gain recognition due to limited access to digital platforms and technology driven exposure. This lack of online visibility prevents them from showcasing their work, connecting with clients, or participating in larger creative networks. Addressing this issue through inclusive, technology-based art platforms can empower local creatives, stimulate job creation, and elevate South Africa’s 
 cultural presence both locally and globally. 
 
