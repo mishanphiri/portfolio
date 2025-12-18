@@ -27,8 +27,11 @@ The provided database contained information on the movie industry, with all acto
 [PDF](https://drive.google.com/file/d/17agNsHB1Im99-4rq66Agp_mc7RbVm6M2/view?usp=sharing)  
 Using the dataset provided, created an interactive data visualisation and storyboard using Tableau. 
 
-### ALX Proffesional Foundations |
+### ALX Proffesional Foundations | Arts Connect Africa Project
 [PDF](https://drive.google.com/file/d/1Ze4v6YM7tpce5JcRs0nvqLzbhvxzMOsY/view?usp=sharing)
+In South Africa’s township and rural communities, many young artists struggle to gain recognition due to limited access to digital platforms and technology driven exposure. This lack of online visibility prevents them from showcasing their work, connecting with clients, or participating in larger creative networks. Addressing this issue through inclusive, technology-based art platforms can empower local creatives, stimulate job creation, and elevate South Africa’s 
+cultural presence both locally and globally. 
+
 
 ## Work Experience
 **Business Intelligence Analyst at FNB Namibia (_October 2024 - present_)**
