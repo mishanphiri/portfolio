@@ -1,9 +1,7 @@
 title: Mishan Phiri
-logo: /images/20220623_152819.jpg
-Description: "Bachelor of Business Science specializing in Analytics student at the University of Cape Town. I am currently in my final year. 
-I have a passion for data and technology with an interest in Machine Learning. I am 
-currently doing my final year project in approximating the Gaussian Problem. I often work in teams with leadership 
-responsibility and run my own small business. I love learning and I am currently working on refining my skills to become a Data Scientist" 
+logo: /images/MishPortrait.jpg
+Description: "Data Proffesional, BI Analyst, Data Science and Data Engineering. 
+Mishan Phiri is a data professional currently employed as a BI Analyst. Her work focuses on streamlining and automating reporting processes. She aims to become an all-rounded data professional, including expertise in Data Science and Engineering.
 #show_downloads: true
-theme: jekyll-theme-minimal
+theme: jekyll-theme-centrarium
 #plugins: jekyll-include-cache
